@@ -1,12 +1,13 @@
 <script>
 	import { page } from '$app/stores';
 	import logo from '$lib/images/logo-me.svg';
-	import github from '$lib/images/github.svg';
+	import Logo from '$lib/components/Logo.svelte';
+	// import github from '$lib/images/github.svg';
 </script>
 
 <header>
 	<a href="/">
-		<img src={logo} alt="Aaron Crockett" />
+		<Logo />
 	</a>
 	<nav>
 		<ul>
