@@ -1,25 +1,17 @@
 <script>
 	import { page } from '$app/stores';
-	import logo from '$lib/images/logo-me.svg';
 	import Logo from '$lib/components/Logo.svelte';
+	import Nav from '$lib/components/Nav.svelte';
+	import PreNav from '$lib/components/PreNav.svelte';
 	// import github from '$lib/images/github.svg';
+
+	export let type = $page.route.id === '/' ? 'intro' : '';
 </script>
 
 <header>
+	<PreNav />
 	<a href="/">
-		<Logo />
+		<Logo size={type === 'intro' ? 'lg' : 'sm'} />
 	</a>
-	<nav>
-		<ul>
-			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-				<a href="/">Home</a>
-			</li>
-			<li aria-current={$page.url.pathname === '/images' ? 'page' : undefined}>
-				<a href="/about">About</a>
-			</li>
-			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-				<a href="/about">About</a>
-			</li>
-		</ul>
-	</nav>
+	<Nav {type} />
 </header>
