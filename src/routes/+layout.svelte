@@ -3,7 +3,7 @@
 	import '../app.css';
 </script>
 
-<div class="app">
+<div class="app h-full">
 	<Header type="intro" />
 
 	<main>

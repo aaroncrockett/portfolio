@@ -4,16 +4,16 @@
 </script>
 
 <nav>
-	<ul>
+	<ul class="flex space-x-4">
 		{#if type !== 'intro'}
-			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
+			<li class="text-white" aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
 				<a href="/">Home</a>
 			</li>
 		{/if}
-		<li aria-current={$page.url.pathname === '/images' ? 'page' : undefined}>
+		<li class="text-white" aria-current={$page.url.pathname === '/images' ? 'page' : undefined}>
 			<a href="/images">Images</a>
 		</li>
-		<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
+		<li class="text-white" aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
 			<a href="/about">About</a>
 		</li>
 	</ul>
