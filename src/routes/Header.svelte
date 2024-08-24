@@ -7,29 +7,38 @@
 
 	export let type = $page.route.id === '/' ? 'intro' : '';
 
-	const introHeaderClass = 'bg-black h-screen flex flex-col px-4';
+	const introHeaderClass = 'bg-pink h-screen flex flex-col';
 	const otherHeaderClass = 'bg-white h-auto';
+
 	$: headerClass = type === 'intro' ? introHeaderClass : otherHeaderClass;
 </script>
 
 <header class={headerClass}>
-	<div class="mx-auto py-4">
+	<div class="w-full mx-auto bg-black">
 		<PreNav />
 	</div>
-	<div class="flex flex-col justify-between flex-1 py-4">
-		<div>
-			<div>
-				<a href="/">
-					<Logo size={type === 'intro' ? 'lg' : 'sm'} />
-				</a>
+	<div class="flex flex-col justify-between flex-1">
+		<div class="relative h-full">
+			<div
+				class="absolute -top-[25%] left-0 right-0 w-3/4 h-[150%] mx-auto rotate-45 bg-black"
+			></div>
+			<div class="relative z-10 flex w-1/2 p-8 mx-auto">
+				<div>
+					<a href="/">
+						<Logo size={type === 'intro' ? 'lg' : 'sm'} />
+					</a>
+
+					<h1 class="uppercase text-pink">Aaron Crockett</h1>
+					<h2 class="text-white">
+						<span>Artist.</span><span>Designer.</span><span>Engineer.</span>
+					</h2>
+				</div>
+				<enhanced:img
+					src="../lib/images/ac-profile-pic.jpeg?w=300;250"
+					sizes="(min-width:1080px) 300px, (min-width:768px) 250px"
+					alt="Handsome artist Aaron Crockett"
+				/>
 			</div>
-			<h1 class="text-pink uppercase">Aaron Crockett</h1>
-			<h2 class="text-white"><span>Artist.</span><span>Designer.</span><span>Engineer.</span></h2>
-			<enhanced:img
-				src="../lib/images/ac-profile-pic.jpeg?w=300;250"
-				sizes="(min-width:1080px) 300px, (min-width:768px) 250px"
-				alt="Handsome artist Aaron Crockett"
-			/>
 		</div>
 
 		<Nav {type} />
