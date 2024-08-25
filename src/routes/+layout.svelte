@@ -2,7 +2,7 @@
 	import Header from './Header.svelte';
 	import '../app.css';
 
-	let hasScrolled = false;
+	let hasScrolledEnough = false;
 
 	let elMain;
 
@@ -10,10 +10,11 @@
 
 	function handleScroll(event) {
 		const viewportHeight = window.innerHeight;
+		const scrollY = window.scrollY;
 
 		// Scroll down by one viewport height
-		if (!hasScrolled) {
-			hasScrolled = true;
+		if (scrollY > 25 && !hasScrolledEnough) {
+			hasScrolledEnough = true;
 			window.scrollBy({
 				top: viewportHeight,
 				behavior: 'smooth' // Smooth scroll effect
