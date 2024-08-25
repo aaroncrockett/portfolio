@@ -12,7 +12,7 @@
 	});
 </script>
 
-<nav class="w-full mx-auto bg-black">
+<nav class="fixed z-10 w-full mx-auto bg-black">
 	{#if pageLoaded}
 		<ul
 			class="relative z-10 flex items-center justify-between h-12 mx-auto md:w-3/4"

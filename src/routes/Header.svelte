@@ -10,7 +10,13 @@
 
 	export let type = $page.route.id === '/' ? 'intro' : '';
 
-	const defaultBackgroundClass = 'absolute top-0 left-0 right-0 w-full mx-auto bg-black md:w-4/5 ';
+	const defaultHeaderClass = 'flex flex-col h-full transition';
+
+	$: headerClass =
+		type === 'intro' ? 'bg-pink ' + defaultHeaderClass : 'bg-black ' + defaultHeaderClass;
+
+	const defaultBackgroundClass =
+		'transition absolute top-0 left-0 right-0 w-full mx-auto bg-black md:w-4/5 ';
 
 	$: backgroundClass =
 		type === 'intro'
@@ -24,7 +30,7 @@
 	});
 </script>
 
-<header class="flex flex-col h-full bg-pink">
+<header class={headerClass}>
 	<!-- <div class="w-full mx-auto bg-black">
 		<PreNav />
 	</div> -->
@@ -38,7 +44,17 @@
 				easing: quintOut
 			}}
 		>
-			<div class={backgroundClass}></div>
+			<div
+				transition:fly={{
+					delay: 300,
+					duration: 750,
+					x: 0,
+					y: '-100%',
+					easing: quintOut,
+					opacity: 0.2
+				}}
+				class={backgroundClass}
+			></div>
 
 			<div
 				class="relative z-10 flex items-center justify-center h-full p-8 mx-auto space-x-8 md:w-2/3"
