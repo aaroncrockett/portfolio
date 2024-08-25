@@ -14,12 +14,82 @@
 </svelte:head>
 
 <section>
+	<div>
+		<h1>This website is being redesigned and developed.</h1>
+
+		<p>images:</p>
+		<h1>This website is being redesigned and developed.</h1>
+
+		<p>images:</p>
+		<h1>This website is being redesigned and developed.</h1>
+
+		<p>images:</p>
+		<h1>This website is being redesigned and developed.</h1>
+
+		<p>images:</p>
+		<h1>This website is being redesigned and developed.</h1>
+
+		<p>images:</p>
+		<h1>This website is being redesigned and developed.</h1>
+
+		<p>images:</p>
+		<h1>This website is being redesigned and developed.</h1>
+
+		<p>images:</p>
+		<h1>This website is being redesigned and developed.</h1>
+
+		<p>images:</p>
+		<h1>This website is being redesigned and developed.</h1>
+
+		<p>images:</p>
+		<h1>This website is being redesigned and developed.</h1>
+
+		<p>images:</p>
+		<h1>This website is being redesigned and developed.</h1>
+
+		<p>images:</p>
+		<h1>This website is being redesigned and developed.</h1>
+
+		<p>images:</p>
+		<h1>This website is being redesigned and developed.</h1>
+
+		<p>images:</p>
+		<h1>This website is being redesigned and developed.</h1>
+
+		<p>images:</p>
+		<h1>This website is being redesigned and developed.</h1>
+
+		<p>images:</p>
+		<h1>This website is being redesigned and developed.</h1>
+
+		<p>images:</p>
+		<h1>This website is being redesigned and developed.</h1>
+
+		<p>images:</p>
+		<h1>This website is being redesigned and developed.</h1>
+
+		<p>images:</p>
+		<h1>This website is being redesigned and developed.</h1>
+
+		<p>images:</p>
+		<h1>This website is being redesigned and developed.</h1>
+
+		<p>images:</p>
+		<h1>This website is being redesigned and developed.</h1>
+
+		<p>images:</p>
+		<h1>This website is being redesigned and developed.</h1>
+
+		<p>images:</p>
+		<h1>This website is being redesigned and developed.</h1>
+
+		<p>images:</p>
+	</div>
 	<h1>This website is being redesigned and developed.</h1>
 
 	<p>images:</p>
 
-	<LightboxGallery>
-		<!-- Layout-->
+	<!-- <LightboxGallery>
 		<svelte:fragment slot="thumbnail">
 			<div class="sample-class-1">
 				<GalleryThumbnail>
@@ -31,11 +101,5 @@
 		<GalleryImage>
 			<img src="https://picsum.photos/200/300" alt="Simple lightbox" />
 		</GalleryImage>
-		<!-- <GalleryImage>
-			<img src="./image-1.jpg" alt="Simple lightbox" />
-		</GalleryImage>
-		<GalleryImage>
-			<img src="./image-2.jpg" alt="Simple lightbox" />
-		</GalleryImage> -->
-	</LightboxGallery>
+	</LightboxGallery> -->
 </section>

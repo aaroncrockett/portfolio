@@ -1,46 +1,69 @@
 <script>
 	import { page } from '$app/stores';
 	import Logo from '$lib/components/Logo.svelte';
+
 	import Nav from '$lib/components/Nav.svelte';
-	import PreNav from '$lib/components/PreNav.svelte';
-	// import github from '$lib/images/github.svg';
+	// import PreNav from '$lib/components/PreNav.svelte';
+	import { onMount } from 'svelte';
+	import { fade, fly } from 'svelte/transition';
+	import { quintOut } from 'svelte/easing';
 
 	export let type = $page.route.id === '/' ? 'intro' : '';
 
-	const introHeaderClass = 'bg-pink h-screen flex flex-col';
-	const otherHeaderClass = 'bg-white h-auto';
+	const defaultBackgroundClass = 'absolute top-0 left-0 right-0 w-full mx-auto bg-black md:w-4/5 ';
 
-	$: headerClass = type === 'intro' ? introHeaderClass : otherHeaderClass;
+	$: backgroundClass =
+		type === 'intro'
+			? 'rotate-45 h-full lg:h-screen xl:h-[135%] ' + defaultBackgroundClass
+			: defaultBackgroundClass + 'h-full';
+
+	let pageLoaded = false;
+
+	onMount(async () => {
+		pageLoaded = true;
+	});
 </script>
 
-<header class={headerClass}>
-	<div class="w-full mx-auto bg-black">
+<header class="flex flex-col h-full bg-pink">
+	<!-- <div class="w-full mx-auto bg-black">
 		<PreNav />
-	</div>
-	<div class="flex flex-col justify-between flex-1">
-		<div class="relative h-full">
+	</div> -->
+	<Nav {type} />
+	{#if pageLoaded}
+		<div
+			class="relative h-screen"
+			out:fade={{
+				duration: 400,
+				delay: 100,
+				easing: quintOut
+			}}
+		>
+			<div class={backgroundClass}></div>
+
 			<div
-				class="absolute -top-[25%] left-0 right-0 w-3/4 h-[150%] mx-auto rotate-45 bg-black"
-			></div>
-			<div class="relative z-10 flex w-1/2 p-8 mx-auto">
-				<div>
+				class="relative z-10 flex items-center justify-center h-full p-8 mx-auto space-x-8 md:w-2/3"
+				transition:fly={{
+					delay: 500,
+					duration: 750,
+					x: '-200%',
+					y: 0,
+					easing: quintOut,
+					opacity: 0.1
+				}}
+			>
+				<div class="flex items-end md:space-x-6">
 					<a href="/">
-						<Logo size={type === 'intro' ? 'lg' : 'sm'} />
+						<Logo size="lg" />
 					</a>
 
-					<h1 class="uppercase text-pink">Aaron Crockett</h1>
-					<h2 class="text-white">
-						<span>Artist.</span><span>Designer.</span><span>Engineer.</span>
-					</h2>
+					<enhanced:img
+						src="../lib/images/ac-profile-pic.jpeg?w=250;150"
+						sizes="(min-width:1080px) 250px,  150px"
+						alt="Handsome artist Aaron Crockett"
+						class="pb-[9px] md:block hidden"
+					/>
 				</div>
-				<enhanced:img
-					src="../lib/images/ac-profile-pic.jpeg?w=300;250"
-					sizes="(min-width:1080px) 300px, (min-width:768px) 250px"
-					alt="Handsome artist Aaron Crockett"
-				/>
 			</div>
 		</div>
-
-		<Nav {type} />
-	</div>
+	{/if}
 </header>

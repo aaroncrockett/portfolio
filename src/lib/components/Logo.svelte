@@ -1,9 +1,9 @@
 <script>
-	import logo from '$lib/images/logo-me.svg';
+	import logo from '$lib/images/logo-w-text.svg';
 
 	export let size = '';
 
-	const lgClass = 'w-20';
+	const lgClass = 'w-[400px]';
 	const smClass = 'w-4';
 
 	$: chosenSizeClass = size == 'lg' ? lgClass : smClass;
