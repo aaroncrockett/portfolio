@@ -3,7 +3,6 @@
 	import Logo from '$lib/components/Logo.svelte';
 
 	import Nav from '$lib/components/Nav.svelte';
-	// import PreNav from '$lib/components/PreNav.svelte';
 	import { onMount } from 'svelte';
 	import { fade, fly } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
@@ -31,9 +30,6 @@
 </script>
 
 <header class={headerClass}>
-	<!-- <div class="w-full mx-auto bg-black">
-		<PreNav />
-	</div> -->
 	<Nav {type} />
 	{#if pageLoaded}
 		<div
