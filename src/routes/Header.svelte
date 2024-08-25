@@ -1,11 +1,10 @@
 <script>
-	import { page } from '$app/stores';
-	import Logo from '$lib/components/Logo.svelte';
-
-	import Nav from '$lib/components/Nav.svelte';
-	import { onMount } from 'svelte';
 	import { fade, fly } from 'svelte/transition';
+	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
 	import { quintOut } from 'svelte/easing';
+	import introLogo from '$lib/images/logo-w-text.svg';
+	import Nav from '$lib/components/Nav.svelte';
 
 	export let type = $page.route.id === '/' ? 'intro' : '';
 
@@ -66,9 +65,7 @@
 				}}
 			>
 				<div class="flex items-end md:space-x-6">
-					<a href="/">
-						<Logo size="lg" />
-					</a>
+					<img src={introLogo} alt="Aaron Crockett" class="h-auto w-[400px]" />
 
 					<enhanced:img
 						src="../lib/images/ac-profile-pic.jpeg?w=250;150"

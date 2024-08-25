@@ -1,10 +1,12 @@
 <script>
-	export let type = '';
-	import { page } from '$app/stores';
-	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
+	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
 	import { quintOut } from 'svelte/easing';
+	import logo from '$lib/images/logo-me.svg';
 	import Pride from '$lib/images/new-pride-flag-01.webp';
+
+	export let type = '';
 
 	let pageLoaded = false;
 	onMount(async () => {
@@ -24,10 +26,21 @@
 				opacity: 0.2
 			}}
 		>
-			<div class="flex space-x-4">
+			<div class="flex items-center space-x-4">
 				{#if type !== 'intro'}
 					<li class="text-white" aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-						<a href="/">Home</a>
+						<a href="/"
+							><img
+								src={logo}
+								alt="Aaron Crockett"
+								class="w-10 h-auto"
+								transition:fade={{
+									delay: 40,
+									duration: 400,
+									easing: quintOut
+								}}
+							/></a
+						>
 					</li>
 				{/if}
 				<li class="text-white" aria-current={$page.url.pathname === '/images' ? 'page' : undefined}>
