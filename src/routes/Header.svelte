@@ -17,9 +17,11 @@
 	const defaultBackgroundClass =
 		'transition absolute top-0 left-0 right-0 w-full mx-auto bg-black md:w-4/5 ';
 
+	const introBackgroundClass = 'rotate-45 h-full lg:h-screen xl:h-[135%]';
+
 	$: backgroundClass =
 		type === 'intro'
-			? 'rotate-45 h-full lg:h-screen xl:h-[135%] ' + defaultBackgroundClass
+			? `${introBackgroundClass} ${defaultBackgroundClass}`
 			: defaultBackgroundClass + 'h-full';
 
 	let pageLoaded = false;
